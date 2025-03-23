@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <title>JS Examplet</title>
+</head>
+<body>
+    <h1 id="head">JS Example</h1>
+
+    <form action="home.html" onsubmit="return validate()">
+        Username: <input type="text" id="username" name="username" value="" /> 
+        <p id="usererror" style="color: red;"></p>
+        <br>
+
+        Password: <input type="password" id="password" name="password" value=""/> 
+        <p id="passerror" style="color: blueviolet;"></p>
+        <br>
+        <input type="submit" name="button" id="button" value="submit"/>
+        <p id="validerror" style="color: purple;"></p>
+    </form>
+    
+    <script>
+    
+        
+        function test(){
+            let head = document.getElementsByTagName('h1')[0];
+            head.innerHTML = "TEST";
+        }
+
+        function changeText(){
+            let username = document.getElementById('username').value;
+            let msg = document.getElementById('msg');
+
+            if(username == ""){
+                msg.innerHTML = "Please type username first!";
+                msg.style.color = 'red';
+            }else{
+                document.getElementById('head').innerHTML = username;
+                msg.innerHTML = "";
+            }
+        }
+
+        function validate(){
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let userError = document.getElementById('usererror');
+            let passError = document.getElementById('passerror');
+            let validError = document.getElementById('validerror');
+            let isValid = true;
+
+            if(username == ""){
+                userError.innerHTML = "Please type username first!";
+                isValid = false;
+            }else{
+               
+                userError.innerHTML = "";
+            }
+            if (password === '') {
+                passError.innerHTML = 'Password empty!';
+                isValid = false;
+            } else {
+                passError.innerHTML = '';
+            }
+
+            if (!isValid) {
+                validError.innerHTML = 'username and password not perfect';
+            } else {
+                validError.innerHTML = '';
+            }
+
+            return isValid; 
+            //check null for username 
+            //check null for password
+
+            //if username == password
+        }
+
+    </script>
+</body>
+</html>
