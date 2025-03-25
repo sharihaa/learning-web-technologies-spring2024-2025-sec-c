@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <title>TASK</title>
+</head>
+<body>
+    <h1 id="head">NAME</h1>
+
+    <form action="home.html" onsubmit="return validate()">
+        <input type="text" id="name" name="name" value="" /> 
+        <p id="nameerror" style="color: red;"></p>
+        <br>
+        <input type="submit" name="button" id="button" value="submit"/>
+       
+    </form>
+    
+    <script>
+    
+    
+
+       
+        function validate(){
+            let nameField = document.getElementById("name");
+            let nameError = document.getElementById("nameerror");
+            let name = nameField.value.trim();
+
+            if (!name) {
+        nameError.innerHTML = "Name cannot be empty.";
+        return false;
+    }
+    
+    let words = name.split(/\s+/);
+    if (words.length < 2) {
+        nameError.innerHTML = "Name must contain at least two words.";
+        return false;
+    }
+
+    if (!/^[a-zA-Z][a-zA-Z.\- ]*$/.test(name)) {
+        nameError.innerHTML = "Name must start with a letter and can only contain letters, dot (.), or dash (-).";
+        return false;
+    }
+
+    nameError.innerHTML = ""; // Clear error if valid
+    return true;
+         }
+           
+    </script>
+</body>
+</html>
