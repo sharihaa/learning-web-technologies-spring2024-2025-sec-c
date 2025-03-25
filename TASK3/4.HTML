@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <title>TASK</title>
+</head>
+<body>
+    <h3>Date of Birth</h3>
+    <form onsubmit="return validateDOB()">
+        <label>Date of Birth:</label>
+        <input type="text" id="dd" placeholder="dd" size="2"> /
+        <input type="text" id="mm" placeholder="mm" size="2"> /
+        <input type="text" id="yyyy" placeholder="yyyy" size="4">
+        <button type="submit">Submit</button>
+        <p id="dobError" style="color: red;"></p>
+    </form>
+    
+    <script>
+        function validateDOB() {
+            var dd = document.getElementById("dd").value;
+            var mm = document.getElementById("mm").value;
+            var yyyy = document.getElementById("yyyy").value;
+            var error = document.getElementById("dobError");
+
+            if (!dd || !mm || !yyyy) {
+                error.innerText = "Date of Birth cannot be empty.";
+                return false;
+            }
+            if (!(dd >= 1 && dd <= 31) || !(mm >= 1 && mm <= 12) || !(yyyy >= 1900 && yyyy <= 2016)) {
+                error.innerText = "Invalid date. Format: dd (1-31), mm (1-12), yyyy (1900-2016).";
+                return false;
+            }
+            error.innerText = "";
+            return true;
+        }
+    </script>
+</body>
+</html>
