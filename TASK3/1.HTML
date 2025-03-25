@@ -10,39 +10,41 @@
         <p id="nameerror" style="color: red;"></p>
         <br>
         <input type="submit" name="button" id="button" value="submit"/>
-       
     </form>
     
     <script>
-    
-    
+        window.onload = function() {  
+            function validate(){
+                let nameField = document.getElementById("name");
+                let nameError = document.getElementById("nameerror");
+                let name = nameField.value.trim();
 
-       
-        function validate(){
-            let nameField = document.getElementById("name");
-            let nameError = document.getElementById("nameerror");
-            let name = nameField.value.trim();
+                
+                if (name === "") {
+                    nameError.innerHTML = "Name cannot be empty.";
+                    return false;
+                }
 
-            if (!name) {
-        nameError.innerHTML = "Name cannot be empty.";
-        return false;
-    }
-    
-    let words = name.split(/\s+/);
-    if (words.length < 2) {
-        nameError.innerHTML = "Name must contain at least two words.";
-        return false;
-    }
+               
+                let words = name.split(/\s+/);
+                if (words.length < 2) {
+                    nameError.innerHTML = "Name must contain at least two words.";
+                    return false;
+                }
 
-    if (!/^[a-zA-Z][a-zA-Z.\- ]*$/.test(name)) {
-        nameError.innerHTML = "Name must start with a letter and can only contain letters, dot (.), or dash (-).";
-        return false;
-    }
+                
+                if (!/^[a-zA-Z][a-zA-Z.\- ]*$/.test(name)) {
+                    nameError.innerHTML = "Name must start with a letter and can only contain letters, dot (.), or dash (-).";
+                    return false;
+                }
 
-    nameError.innerHTML = ""; // Clear error if valid
-    return true;
-         }
-           
+                nameError.innerHTML = ""; 
+                return true;
+            }
+
+            
+            document.querySelector("form").onsubmit = validate;
+        };
     </script>
 </body>
 </html>
