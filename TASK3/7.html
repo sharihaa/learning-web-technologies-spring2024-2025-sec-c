@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TASK</title>
+</head>
+<body>
+    <h3>Profile Picture</h3>
+    <form onsubmit="return validateForm()">
+        User ID: <input type="text" id="userId"><br><br>
+        Picture: <input type="file" id="picture"><br><br>
+        <button type="submit">Submit</button>
+        <p id="errorMessage" style="color: red;"></p>
+    </form>
+
+    <script>
+        function validateForm() {
+            var userId = document.getElementById("userId").value;
+            var picture = document.getElementById("picture").files.length;
+            var errorMsg = "";
+
+            if (!userId || isNaN(userId) || Number(userId) <= 0) {
+                errorMsg += "User ID must be a positive number.\n";
+            }
+            if (picture === 0) {
+                errorMsg += "Please upload a picture.\n";
+            }
+
+            document.getElementById("errorMessage").innerText = errorMsg;
+            return errorMsg === "";
+        }
+    </script>
+</body>
+</html>

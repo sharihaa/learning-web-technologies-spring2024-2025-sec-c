@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TASK</title>
+</head>
+<body>
+    <h3>Gender</h3>
+    <form onsubmit="return validateForm()">
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label><br><br>
+        <button type="submit">Submit</button>
+        <p id="errorMessage" style="color: red;"></p>
+    </form>
+
+    <script>
+        function validateForm() {
+            var genderOptions = document.getElementsByName("gender");
+            var selected = false;
+
+            for (var i = 0; i < genderOptions.length; i++) {
+                if (genderOptions[i].checked) {
+                    selected = true;
+                    break;
+                }
+            }
+
+            document.getElementById("errorMessage").innerText = selected ? "" : "Please select a gender.";
+            return selected;
+        }
+    </script>
+</body>
+</html>
