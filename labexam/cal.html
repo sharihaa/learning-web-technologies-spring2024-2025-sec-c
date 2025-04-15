@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+</head>
+<body>
+ 
+
+<script>
+    const calculator = document.createElement("div");
+    const display = document.createElement("input");
+    display.type = "text";
+    display.id = "display";
+    display.disabled = true;
+    display.style.display = "block"
+    calculator.append(display);
+    const buttons = [
+      "1", "2", "3","4", "5", "6","7", "8", "9","0",
+      "/","*","-",
+       ".", "=", "+",
+      "%","C"
+    ];
+    
+    
+    buttons.forEach(label => {
+      const button = document.createElement("button");
+      button.textContent = label;
+    
+      button.onclick = () => {
+        if (label === "C") {
+          display.value = "";
+        } else if (label === "=") {
+          try {
+            display.value = eval(display.value);
+          } catch {
+            alert("Error");
+          }
+        } else {
+          display.value += label;
+        }
+      };
+    
+      calculator.append(button);
+    });
+    
+    
+    document.body.append(calculator);
+    </script>
+    </body>
+    </html>

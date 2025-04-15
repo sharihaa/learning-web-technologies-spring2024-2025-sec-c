@@ -1,28 +1,29 @@
-/* Reset default styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
-
-/* Body styling */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #9face6);
-    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* ← This is the missing part */
+    height: 100vh; /* ← This ensures full viewport height */
+    background: linear-gradient(to right, #a1d3ff, #8155be); /* or your current gradient */
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Login container */
 .login-container {
-    background-color: #fff;
+    background-color: #bfb5f0;
     padding: 40px 30px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     width: 350px;
     animation: fadeIn 0.5s ease-in-out;
+    text-align: center;
 }
 
 /* Title */
@@ -63,7 +64,7 @@ body {
 button {
     width: 100%;
     padding: 12px;
-    background: #7f8ff4;
+    background: #07156c;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
@@ -75,16 +76,38 @@ button {
 
 button:hover {
     background: #6a78d1;
-}
-
-/* Optional: smooth fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-15px);
+}@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
-}
+  }
+  
+  .btn-timer {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  
+  .btn-timer:hover {
+    background-color: #3e8e41;
+    transform: scale(1.05);
+  }
+  
+  .btn-timer i {
+    margin-right: 8px;
+  }
+  

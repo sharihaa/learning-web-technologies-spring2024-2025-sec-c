@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Email Verification</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Verify Your Email</h2>
+        <p>We've sent a verification code to your email. Please enter it below:</p>
+        
+        <form action="login.html" method="POST">
+            <div class="form-control">
+                <label for="verification-code">Verification Code:</label>
+                <input type="text" id="verification-code" name="verification-code" required>
+            </div>
+
+            <button type="submit">Verify</button>
+        </form>
+        
+        <p>Didn't receive the email? <a href="#">Resend Code</a></p>
+    </div>
+</body>
+</html>

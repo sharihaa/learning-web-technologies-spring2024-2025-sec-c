@@ -1,0 +1,79 @@
+
+body {
+  display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+    background: linear-gradient(to right, #a1d3ff, #8155be); 
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+.timer {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  padding: 20px;
+  border: 2px solid #4CAF50;
+  display: inline-block;
+  border-radius: 10px;
+  background: #f0f0f0;
+}
+.timer {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  padding: 20px;
+  border: 2px solid #4CAF50;
+  display: inline-block;
+  border-radius: 10px;
+  background: #ffffff;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+.settings {
+  margin-bottom: 20px;
+}
+
+.settings label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.settings input {
+  width: 60px;
+  padding: 5px;
+  font-size: 16px;
+}
+.settings select {
+  padding: 6px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
